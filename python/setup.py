@@ -8,11 +8,11 @@ setup(
     package_dir                 = {
         "WHIutils":		".",
     },
-    version                     = "0.0.1",
+    version                     = "0.0.4",
     include_package_data        = True,
     author                      = "Matthew Brisebois",
     author_email                = "matthew@webheroes.ca",
-    url                         = "https://github.com/webheroesinc/python-utils",
+    url                         = "https://github.com/webheroesinc/webheroes-utils",
     license                     = "Dual License; GPLv3 and Proprietary",
     description                 = "Set of python utils made specifically for Web Heroes Inc.",
     keywords                    = [],

@@ -16,10 +16,10 @@ python/LICENSE:
 python/COPYING:
 	ln -s $$(pwd)/COPYING $@
 register-package:
-	cd python; python setup.py register
+	cd python; python setup.py register -r pypi
 register-test-package:
 	cd python; python setup.py register -r pypi-test
 upload-package:		python/COPYING python/LICENSE
-	cd python; python setup.py sdist upload
+	cd python; python setup.py sdist upload -r pypi
 upload-test-package:	python/COPYING python/LICENSE
 	cd python; python setup.py sdist upload -r pypi-test
