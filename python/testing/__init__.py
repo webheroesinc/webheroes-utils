@@ -52,6 +52,7 @@ class api(dict):
         self.params		= kwargs.setdefault('params', {})
         self.timeout		= kwargs.setdefault('timeout', 1)
         self.cookies		= kwargs.get('cookies')
+        self.api_prefix		= kwargs.get('api_prefix', 'api')
 
         if self.data is not None:
             if type(self.data) is str:
@@ -62,7 +63,8 @@ class api(dict):
         if self.test is True:
             self.params['__test__']	= True
 
-        url			= "/".join([apiurl,"api",self.path])
+        path_items		= [ apiurl, self.api_prefix, self.path ]
+        url			= "/".join( [x for x in path_items if x is not None])
         if session is None:
             self.req		= requests.get(url, **kwargs)
             self.cookies	= self.req.cookies
